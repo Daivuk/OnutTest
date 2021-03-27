@@ -21,8 +21,10 @@ namespace seed
 
         
     private:
-
+        
+#ifdef WITH_BOX_2D
         b2World*    m_world;
+#endif
         BodyMap     m_bodies;
 
         float       m_pixelToMetersRatio;

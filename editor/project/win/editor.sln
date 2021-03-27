@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "editor", "editor.vcxproj", "{44D317E5-5245-4E8F-9D84-C56EC5E3A786}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A0E49D2-55F1-4AB5-94F6-D19F308ECC46} = {5A0E49D2-55F1-4AB5-94F6-D19F308ECC46}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "onut", "..\..\..\onut\project\win\onut.vcxproj", "{5A0E49D2-55F1-4AB5-94F6-D19F308ECC46}"
 EndProject
@@ -24,5 +27,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {451284F1-CC04-4EE4-B7E8-B998BCCF7E59}
 	EndGlobalSection
 EndGlobal

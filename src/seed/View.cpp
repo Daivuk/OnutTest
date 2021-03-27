@@ -10,7 +10,9 @@
 #include "onut.h"
 #include "tinyxml2.h"
 #include "TiledMapNode.h"
+#ifdef WITH_BOX_2D
 #include "PhysicsBody.h"
+#endif
 
 #define VIEW_DEFAULT_NODE_COUNT 1024
 
@@ -66,7 +68,9 @@ namespace seed
     {
         // update nodes
         m_rootNode->Update();
+#ifdef WITH_BOX_2D
         UpdatePhysics();
+#endif
         OnUpdate();
 
         // update buttons interactions
@@ -671,6 +675,7 @@ namespace seed
         return false;
     }
 
+#ifdef WITH_BOX_2D
     PhysicsMgr& View::GetPhysics()
     {
         return m_physics;
@@ -695,5 +700,6 @@ namespace seed
     {
         m_physics.Update();
     }
+#endif
 
 }

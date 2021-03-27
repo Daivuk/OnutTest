@@ -79,11 +79,13 @@ namespace seed
         void VisitNodesBackward(const VisitCallback& callback);
 
         // Physics stuff for this particular view
+#ifdef WITH_BOX_2D
         PhysicsMgr&     GetPhysics();
         PhysicsBody*    CreateBoxPhysicsForNode(Node* in_node, bool in_static);
         PhysicsBody*    CreateCirclePhysicsForNode(Node* in_node, float in_radius, bool in_static);
         PhysicsBody*    GetPhysicsForNode(Node* in_node);
-        
+#endif
+
     private:
 
         // root node, updating/rendering all nodes attached to it
@@ -120,7 +122,9 @@ namespace seed
         ButtonVect      GetPotentialCandidates(const Vector2& in_dir, int in_playerIndex);
         bool            AlreadyInVector(Button* in_button, ButtonVect& in_vector);
         
+#ifdef WITH_BOX_2D
         PhysicsMgr      m_physics;
         void            UpdatePhysics();
+#endif
     };
 }
